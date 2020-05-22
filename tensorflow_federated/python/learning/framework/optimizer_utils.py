@@ -458,7 +458,7 @@ def build_model_delta_optimizer_process(
       # Promote the FederatedType outside the NamedTupleType.
       aggregated_outputs = tff.federated_zip(aggregated_outputs)
 
-    return server_state, aggregated_outputs
+    return server_state, aggregated_outputs, client_outputs
 
   return tff.templates.IterativeProcess(
       initialize_fn=server_init_tff, next_fn=run_one_round_tff)
